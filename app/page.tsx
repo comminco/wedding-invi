@@ -1,57 +1,72 @@
+'use client'
+
 import Image from 'next/image'
-import styles from './page.module.css'
+import photo from '../public/images/wedding-photo.jpg'
+import Text from '../components/text'
+import DivideNavi from '../components/divideNavi'
+import { useCallback, useEffect, useState } from 'react'
 
-export default function Home() {
+export default function home() {
+  const [backgroundOpacity, setBackgroundOpacity] = useState(1)
+  function handleScroll() {
+    let bgOpacity = 180 / (window.scrollY + 1)
+    console.log(bgOpacity)
+    if (bgOpacity < 0.3) {
+      bgOpacity = 0
+    }
+
+    setBackgroundOpacity(bgOpacity)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+    <div id="view" className="h-full">
+      <div id="landing" className="pt-[100vh]">
+        <div className="w-full h-[100vh] fixed top-0 left-0 overflow-hidden">
+          <Image
+            src={photo}
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+            alt="WE GET MARRY!"
+          />
         </div>
-      </main>
+      </div>
+      <div
+        className="fixed top-0 left-0 w-full h-full"
+        style={{
+          backgroundColor: `rgba(0,0,0,0.2)`,
+        }}
+      ></div>
+      <div
+        className="fixed px-12 top-8 left-0 w-full text-center text-3xl font-helvetica leading-7  font-light"
+        style={{
+          color: `rgba(0,0,0,${backgroundOpacity})`,
+        }}
+      >
+        <div className="flex justify-between items-center px-11">
+          <div>hey friends</div>
+          <div
+            className="w-9 h-[1px]"
+            style={{
+              backgroundColor: `rgba(0,0,0,${backgroundOpacity})`,
+            }}
+          ></div>
+        </div>
+        <div>we are getting</div>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+        <div className="mt-4">married!</div>
+      </div>
+
+      <main>
+        <Text />
+        <DivideNavi />
+      </main>
     </div>
   )
 }
