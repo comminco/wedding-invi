@@ -11,12 +11,12 @@ function App() {
   const setTimeZone = useSetRecoilState(timeZoneRecoil)
 
   useEffect(() => {
-      init()
+    init()
   }, [])
-  
+
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/*" element={<Home />} />
     </Routes>
   )
 }

@@ -3,26 +3,16 @@ import flower from '@/assets/images/flower.png'
 import black_star from '@/assets/images/black_star.png'
 import { useLocation } from 'react-router-dom'
 import React from 'react'
+import { Star } from '../common/star'
 
 export function Money() {
   const location = useLocation()
   const { pathname } = location
-
+  console.log(pathname)
   const accountDatas = pathname.includes('bride') ? brideDatas : groomDatas
   return (
     <Wrap>
-      <div style={{ width: '100%', textAlign: 'center' }}>
-        <img
-          style={{
-            width: '25%',
-            paddingBottom: '2rem',
-          }}
-          src={flower}
-          alt=""
-        />
-      </div>
       <Title>마음 전하실 곳</Title>
-      <Line />
       <Account datas={accountDatas} />
       <br />
     </Wrap>
@@ -37,43 +27,33 @@ const Account = ({ datas }: any[]) => {
     >
       {datas.map((data, idx) => {
         return (
-          <React.Fragment key={idx}>
+          <div
+            key={idx}
+            style={{
+              width: '100%',
+              margin: '1.5rem 0rem',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <div>✤ {`${data.role} : ${data.name}`}</div>
+
             <div
-              style={{
-                width: '100%',
-                margin: '1rem 0rem',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div>
-                <img
-                  style={{ paddingRight: '0.3rem', width: '0.8rem' }}
-                  src={black_star}
-                  alt="*"
-                />
-                {`${data.role} : ${data.name}`}
-              </div>
+              style={{ paddingLeft: '1rem' }}
+            >{`연락처 : ${data.phone}`}</div>
 
-              <div
-                style={{ paddingLeft: '1.1rem' }}
-              >{`연락처 : ${data.phone}`}</div>
-
-              <div className="f-b-c" style={{ paddingLeft: '1.1rem' }}>
-                <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
-                <div style={{ position: 'relative' }}>
-                  <CopyText id={`copyText-${idx}`}>복사 되었습니다.</CopyText>
-                  <CopyButton
-                    onClick={() => handleCopyClipBoard(data.bankAccount, idx)}
-                  >
-                    계좌 복사하기
-                  </CopyButton>
-                </div>
+            <div className="f-b-c" style={{ paddingLeft: '1rem' }}>
+              <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
+              <div style={{ position: 'relative' }}>
+                <CopyText id={`copyText-${idx}`}>복사 되었습니다.</CopyText>
+                <CopyButton
+                  onClick={() => handleCopyClipBoard(data.bankAccount, idx)}
+                >
+                  계좌 복사하기
+                </CopyButton>
               </div>
             </div>
-
-            <Line />
-          </React.Fragment>
+          </div>
         )
       })}
     </div>
@@ -83,48 +63,48 @@ const Account = ({ datas }: any[]) => {
 const brideDatas = [
   {
     role: '신부',
-    name: '서윤미',
-    phone: '010-2667-1056',
-    bank: '신한은행 110-503-685140',
-    bankAccount: '110-503-685140',
+    name: '빈다은',
+    phone: '010-3900-2004',
+    bank: '신한은행 110-451-165439',
+    bankAccount: '110-451-165439',
   },
   {
     role: '아버님',
-    name: '서혁',
-    phone: '010-9156-1056',
-    bank: '제일은행 579-2030-9218',
-    bankAccount: '579-2030-9218',
+    name: '빈수용',
+    phone: '010-2593-5689',
+    bank: '--은행 0000-000-00000',
+    bankAccount: '0000-000-00000',
   },
   {
     role: '어머님',
-    name: '이정숙',
-    phone: '010-2669-1056',
-    bank: '국민은행 2702-103-29182',
-    bankAccount: '2702-103-29182',
+    name: '최미경',
+    phone: '010-6624-2997',
+    bank: '--은행 0000-000-00000',
+    bankAccount: '0000-000-00000',
   },
 ]
 
 const groomDatas = [
   {
     role: '신랑',
-    name: '이재호',
-    phone: '010-9940-4435',
-    bank: '우리은행<br/>1002-147-945727',
-    bankAccount: '1002-147-945727',
+    name: '이경민',
+    phone: '010-6406-8160',
+    bank: '신한은행 110-369-341954',
+    bankAccount: '110-369-341954',
   },
   {
     role: '아버님',
-    name: '이영희',
-    phone: '010-2974-4435',
-    bank: '국민은행<br/>505802-01-104914',
-    bankAccount: '505802-01-104914',
+    name: '이동진',
+    phone: '010-2408-8160',
+    bank: '--은행 0000-000-00000',
+    bankAccount: '0000-000-00000',
   },
   {
     role: '어머님',
-    name: '박상옥',
-    phone: '010-3233-4435',
-    bank: '우리은행<br/>126-097263-12-001',
-    bankAccount: '126-097263-12-001',
+    name: '김경화',
+    phone: '010-3156-8160',
+    bank: '하나은행 743-910005-70707',
+    bankAccount: '743-910005-70707',
   },
 ]
 
@@ -150,7 +130,6 @@ const CopyText = styled.p`
 
 const Wrap = styled.section`
   padding: 3rem 2rem;
-  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,7 +139,7 @@ const Wrap = styled.section`
 
 const Title = styled.div`
   font-size: 1.7rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 `
 
 const Line = styled.div`
@@ -175,7 +154,7 @@ const CopyButton = styled.button`
   font-size: 0.8rem;
   background-color: var(--green);
   width: 6rem;
-  height: 40px;
+  height: 32px;
   border: none;
   border-radius: 5px;
 `

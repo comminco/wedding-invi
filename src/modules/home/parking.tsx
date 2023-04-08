@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 import mapImg from '@/assets/images/map.png'
-import hanbok from '@/assets/images/hanbok.png'
 
-export function Map() {
+export function Parking() {
   return (
     <Wrap>
-      <Title>예식장 안내</Title>
+      <Title>주차 안내</Title>
       <div style={{ textAlign: 'center' }}>
-        <p>서울 용산구 서빙고로 137</p>
-        <p>용산가족공원</p>
+        <p>서울 용산구 용산동5가 14-1</p>
+        <p>국립중앙박물관 지하주차장</p>
       </div>
 
       <div
@@ -42,31 +41,9 @@ export function Map() {
           카카오 지도
         </MapButton>
       </div>
-
-      <Traffic style={{ fontWeight: 'bold' }}>대중교통</Traffic>
-      <Traffic>4호선 이촌역 하차 2번 출구</Traffic>
-      <Traffic>경의중앙 서빙고역 하차 1번 출구</Traffic>
     </Wrap>
   )
 }
-
-const Traffic = styled.div`
-  text-align: center;
-  width: 100%;
-  height: 1.8rem;
-  max-width: 400px;
-  padding-left: 5px;
-  font-family: 'QuattroSans';
-`
-
-const MapImg = styled.img`
-  width: 100%;
-
-  max-width: 400px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 5px;
-`
 
 const Wrap = styled.section`
   padding: 3rem 2rem;
@@ -76,6 +53,15 @@ const Wrap = styled.section`
   justify-content: center;
   align-items: center;
   border-bottom: var(--border-S);
+`
+
+const MapImg = styled.img`
+  width: 100%;
+
+  max-width: 400px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
 `
 
 const Title = styled.div`

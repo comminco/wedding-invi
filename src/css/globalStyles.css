@@ -3,6 +3,11 @@
   src: url('../assets/fonts/AppleMyungjo.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'QuattroSans';
+  src: url('../assets/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
+}
+
 html,
 body,
 #_bibimbap {
@@ -71,6 +76,8 @@ body {
   --key-color-300: rgba(var(--key-color-rgb), 0.3);
   --key-color-400: rgba(var(--key-color-rgb), 0.4);
   --key-color-500: rgba(var(--key-color-rgb), 0.5);
+  --key-color-naver: #03c75a;
+  --key-color-kakao: #fee500;
 
   --text-M: 0.875rem;
   --text-L: 1.5rem;
@@ -89,7 +96,7 @@ body {
 
 .pretendard {
   font-weight: 300;
-  font-family: 'Pretendard';
+  font-family: 'QuattroSans';
   line-height: 1.4rem;
   letter-spacing: -0.01em;
 }
