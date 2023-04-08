@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'AppleMyungjo';
+  src: url('../assets/fonts/AppleMyungjo.ttf') format('truetype');
+}
+
+html,
+body,
+#_bibimbap {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 20px;
+  line-height: 1.7rem;
+  letter-spacing: -0.04em;
+  font-family: 'AppleMyungjo';
+}
+
+html img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+p {
+  white-space: pre;
+  margin: 0;
+}
+
+button {
+  color: hsla(0, 0%, 0%, 0.9);
+}
+
+.f-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-b-c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body {
+  word-wrap: break-word;
+  color: hsla(0, 0%, 0%, 0.9);
+}
+
+#_bibimbap {
+  opacity: 1;
+}
+
+:root {
+  --key-color-rgb: 74, 111, 132;
+
+  --key-color: rgba(var(--key-color-rgb));
+  --key-color-100: rgba(var(--key-color-rgb), 0.1);
+  --key-color-200: rgba(var(--key-color-rgb), 0.2);
+  --key-color-300: rgba(var(--key-color-rgb), 0.3);
+  --key-color-400: rgba(var(--key-color-rgb), 0.4);
+  --key-color-500: rgba(var(--key-color-rgb), 0.5);
+
+  --text-M: 0.875rem;
+  --text-L: 1.5rem;
+  --text-XL: 3rem;
+
+  --width-M: 2rem;
+  --width-L: 4rem;
+
+  --border-S: 1px solid black;
+  --border-M: 1.5px solid black;
+  --border-L: 2px solid black;
+
+  --green: #a9eea2;
+  --orange: #ffbc76;
+}
+
+.pretendard {
+  font-weight: 300;
+  font-family: 'Pretendard';
+  line-height: 1.4rem;
+  letter-spacing: -0.01em;
+}
+
+/**
+* media 
+*/
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+/**
+* mobile Responsive
+*/
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/** 
+* keyframes
+*/
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearNdisappear {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

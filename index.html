@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Project Information-->
+    <title>경민 S2 다은</title>
+    <link rel="icon" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="bibimbap is a template that put packages like react, vite."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="bibimbap" />
+    <meta
+      property="og:description"
+      content="bibimbap is a template that put packages like react, vite."
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id={your-G-ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'your-G-ID');
+    </script> -->
+
+    <!-- Intro Style css-->
+    <!-- The role of intro is to keep the client from getting bored until the bundled js file is downloaded. -->
+    <style type="text/css">
+      #intro-wrap {
+        min-width: 185px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      #intro-topside {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      #intro-bottomside {
+        text-align: right;
+      }
+
+      #intro-wrap a {
+        text-decoration: none;
+        color: hsla(0, 0%, 0%, 0.7);
+      }
+
+      #intro {
+        font-family: 'QuattroSans';
+        background: radial-gradient(
+          circle at top,
+          rgba(74, 111, 132, 0.1),
+          rgba(74, 111, 132, 0.2) 50%,
+          rgba(74, 111, 132, 0.5) 100%
+        );
+
+        width: 100%;
+        height: 100%;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+
+        z-index: 9;
+      }
+
+      #line {
+        border-bottom: 2px solid black;
+        margin-bottom: 10px;
+        animation: bar 2s ease forwards;
+      }
+
+      @keyframes bar {
+        0% {
+          flex: 0;
+        }
+
+        100% {
+          flex: 0.9;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="intro">
+      <div id="intro-wrap">
+        <div id="intro-topside">
+          <a href="https://commin.co" target="_blank">bibimbap</a>
+          <span id="line"></span>
+        </div>
+        <div id="intro-bottomside">fastest Created project</div>
+      </div>
+    </div> -->
+    <div id="_bibimbap"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
