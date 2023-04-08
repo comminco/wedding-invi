@@ -1,9 +1,5 @@
 import styled from 'styled-components'
-import flower from '@/assets/images/flower.png'
-import black_star from '@/assets/images/black_star.png'
 import { useLocation } from 'react-router-dom'
-import React from 'react'
-import { Star } from '../common/star'
 
 export function Money() {
   const location = useLocation()
