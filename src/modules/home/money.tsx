@@ -1,77 +1,109 @@
 import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
+import { Star } from '../common/star'
+import { useState, useEffect, useRef } from 'react'
 
 export function Money() {
-  const location = useLocation()
-  const { pathname } = location
-  console.log(pathname)
-  const accountDatas = pathname.includes('bride') ? brideDatas : groomDatas
   return (
     <Wrap>
+      <Star />
       <Title>마음 전하실 곳</Title>
-      <Account datas={accountDatas} />
+      <Toggle type={'groom'} datas={groomDatas} title={'신랑측 계좌번호'} />
+      <Toggle type={'bride'} datas={brideDatas} title={'신부측 계좌번호'} />
       <br />
     </Wrap>
   )
 }
 
-const Account = ({ datas }: any[]) => {
+const Toggle = ({ datas, title, type }: any[]) => {
+  const [isActive, setIsActive] = useState(false)
+  useEffect(() => {
+    if (isActive) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: document.body.scrollHeight + 400,
+          behavior: 'smooth',
+        })
+      }, 300)
+    }
+  }, [isActive])
+
   return (
-    <div
-      className="pretendard"
-      style={{ width: '100%', lineHeight: 2, fontWeight: 400 }}
-    >
-      {datas.map((data, idx) => {
-        return (
-          <div
-            key={idx}
-            style={{
-              width: '100%',
-              margin: '1.5rem 0rem',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            <div>✤ {`${data.role} : ${data.name}`}</div>
-            <div className="f-b-c" style={{ paddingLeft: '1rem' }}>
-              <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
-              <div style={{ position: 'relative' }}>
-                <CopyText id={`copyText-${idx}`}>복사 되었습니다.</CopyText>
-                <CopyButton
-                  onClick={() => handleCopyClipBoard(data.bankAccount, idx)}
-                >
-                  계좌 복사하기
-                </CopyButton>
+    <div style={{ margin: '0.5rem 0rem' }}>
+      <AccountBtn onClick={() => setIsActive(!isActive)}>
+        {title}
+        <Arrow isActive={isActive} />
+      </AccountBtn>
+      <div
+        className="expandable"
+        id={isActive ? 'active' : ''}
+        style={{ width: '100%', lineHeight: 2, fontWeight: 400 }}
+      >
+        {datas.map((data, idx) => {
+          return (
+            <div
+              key={idx}
+              style={{
+                width: '100%',
+                margin: '1.5rem 0rem',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <div>{`${data.name}`}</div>
+              <div className="f-b-c">
+                <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
+                <div style={{ position: 'relative' }}>
+                  <CopyText id={`copyText-${idx}-${type}`}>
+                    복사 되었습니다.
+                  </CopyText>
+                  <CopyButton
+                    onClick={() =>
+                      handleCopyClipBoard(data.bankAccount, idx, type)
+                    }
+                  >
+                    복사하기
+                  </CopyButton>
+                </div>
               </div>
             </div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   )
 }
 
+const Arrow = ({ isActive }) => {
+  return (
+    <svg
+      focusable="false"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      style={{ width: '1.5rem', transform: isActive ? 'rotate(0.5turn)' : '' }}
+    >
+      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+    </svg>
+  )
+}
 const brideDatas = [
   {
     role: '신부',
     name: '빈다은',
-    phone: '010-3900-2004',
     bank: '신한은행 110-451-165439',
     bankAccount: '110-451-165439',
   },
   {
     role: '아버님',
     name: '빈수용',
-    phone: '010-2593-5689',
-    bank: '--은행 0000-000-00000',
-    bankAccount: '0000-000-00000',
+    bank: '카카오뱅크 3333-01-6458488',
+    bankAccount: '3333-01-6458488',
   },
   {
     role: '어머님',
     name: '최미경',
-    phone: '010-6624-2997',
-    bank: '--은행 0000-000-00000',
-    bankAccount: '0000-000-00000',
+    bank: '카카오뱅크 3333-05-1653524',
+    bankAccount: '3333-05-1653524',
   },
 ]
 
@@ -99,10 +131,10 @@ const groomDatas = [
   },
 ]
 
-const handleCopyClipBoard = async (text: string, idx: number) => {
+const handleCopyClipBoard = async (text: string, idx: number, type: string) => {
   try {
     await navigator.clipboard.writeText(text)
-    const copyTextEl = document.getElementById(`copyText-${idx}`)!
+    const copyTextEl = document.getElementById(`copyText-${idx}-${type}`)!
     copyTextEl.style.animation = 'appearNdisappear linear 0.7s 1 forwards'
     setTimeout(() => {
       copyTextEl.style.animation = 'none'
@@ -116,11 +148,13 @@ const CopyText = styled.p`
   font-size: 0.6rem;
   position: absolute;
   top: -19px;
+  left: 10px;
   opacity: 0;
 `
 
 const Wrap = styled.section`
-  padding: 3rem 2rem;
+  padding: 3rem 1.5rem;
+  padding-top: 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,18 +167,27 @@ const Title = styled.div`
   margin-bottom: 1.5rem;
 `
 
-const Line = styled.div`
-  border-bottom: var(--border-S);
+const AccountBtn = styled.button`
   width: 100%;
-  max-width: 400px;
+  background-color: #008000;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  font-size: var(--text-M);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  cursor: pointer;
 `
 
 const CopyButton = styled.button`
   cursor: pointer;
   font-weight: 400;
   font-size: 0.8rem;
-  background-color: var(--green);
-  width: 6rem;
+  background-color: rgb(191, 225, 192);
+  width: 4rem;
+  margin-left: 20px;
   height: 32px;
   border: none;
   border-radius: 5px;

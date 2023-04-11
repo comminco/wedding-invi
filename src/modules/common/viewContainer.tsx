@@ -15,7 +15,6 @@ function ViewContainer({ children }: ViewContainerProps) {
 
 const Container = styled.div`
   margin: auto;
-  height: 100%;
   width: 100%;
 
   overflow-y: scroll;
@@ -27,7 +26,6 @@ const Container = styled.div`
 
 const Wrap = styled.main`
   margin: auto;
-  height: 100vh;
   width: 100%;
   max-width: 480px;
 `

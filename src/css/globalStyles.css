@@ -11,7 +11,6 @@
 html,
 body,
 #_bibimbap {
-  height: 100%;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -62,6 +61,7 @@ button {
 body {
   word-wrap: break-word;
   color: hsla(0, 0%, 0%, 0.9);
+  background-color: rgba(226, 202, 136, 0.1);
 }
 
 #_bibimbap {
@@ -81,14 +81,16 @@ body {
   --key-color-naver: #03c75a;
   --key-color-kakao: #fee500;
 
-  --text-M: 0.875rem;
-  --text-L: 1.5rem;
-  --text-XL: 3rem;
+  --text-S: 0.75rem;
+  --text-M: 1rem;
+  --text-L: 1.25rem;
+  --text-XL: 2rem;
+  --text-XXL: 3rem;
 
   --width-M: 2rem;
   --width-L: 4rem;
 
-  --border-S: 1px solid black;
+  --border-S: 1px solid grey;
   --border-M: 1.5px solid black;
   --border-L: 2px solid black;
 
@@ -96,11 +98,18 @@ body {
   --orange: #ffbc76;
 }
 
-.pretendard {
-  font-weight: 300;
+.expandable {
   font-family: 'QuattroSans';
-  line-height: 1.4rem;
-  letter-spacing: -0.01em;
+  overflow: hidden;
+  color: #000;
+  line-height: 50px;
+
+  transition: all 0.5s ease-in-out;
+  height: 0;
+}
+
+#active {
+  height: 17rem;
 }
 
 /**

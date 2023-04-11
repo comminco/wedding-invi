@@ -30,18 +30,8 @@ const Wrap = styled.section`
   align-items: center;
 `
 
-const Traffic = styled.div`
-  text-align: center;
-  width: 100%;
-  height: 1.8rem;
-  max-width: 400px;
-  padding-left: 5px;
-  font-family: 'QuattroSans';
-`
-
 const MapImg = styled.img`
-  width: 120%;
-  transform: translate(-8%, 0);
+  width: 100%;
 
   max-width: 400px;
   margin-bottom: 2rem;

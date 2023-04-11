@@ -77,5 +77,4 @@ const MapButton = styled.button`
   border: none;
   text-align: center;
   font-size: var(--text-M);
-  font-family: 'QuattroSans';
 `

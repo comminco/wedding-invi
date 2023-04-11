@@ -42,9 +42,9 @@ export function Map() {
         </MapButton>
       </div>
 
-      <Traffic className="title">주차장</Traffic>
-      <Traffic>국립중앙박물관 주차 후</Traffic>
-      <Traffic>거울못식당 옆 석조물정원 지나 이정표 따라 도보6분</Traffic>
+      <Traffic className="title">주차안내</Traffic>
+      <Traffic>국립중앙박물관 지하주차장에 주차 하신 후</Traffic>
+      <Traffic>이정표 따라 예식장으로 오시면 됩니다(도보6분)</Traffic>
       <Traffic>※ 유료 2시간 2000원</Traffic>
       <br />
       <Traffic className="title">대중교통</Traffic>
@@ -101,8 +101,9 @@ const MapButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-M);
-  font-family: 'QuattroSans';
+  font-size: var(--text-S);
+  font-family: 'AppleMyungjo';
+  margin-top: 10px;
 
   img {
     margin-right: 5px;

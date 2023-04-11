@@ -12,6 +12,7 @@ export function MainImage() {
 const Wrap = styled.div`
   width: 100%;
   height: 500px;
+  border-top: var(--border-S);
 `
 const Bubu = styled.img`
   height: 100%;
