@@ -19,6 +19,7 @@ const Container = styled.div`
   width: 100%;
 
   overflow-y: scroll;
+  overflow-x: hidden;
 
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

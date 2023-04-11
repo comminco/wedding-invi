@@ -33,11 +33,6 @@ const Account = ({ datas }: any[]) => {
             }}
           >
             <div>✤ {`${data.role} : ${data.name}`}</div>
-
-            <div
-              style={{ paddingLeft: '1rem' }}
-            >{`연락처 : ${data.phone}`}</div>
-
             <div className="f-b-c" style={{ paddingLeft: '1rem' }}>
               <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
               <div style={{ position: 'relative' }}>
@@ -92,8 +87,8 @@ const groomDatas = [
     role: '아버님',
     name: '이동진',
     phone: '010-2408-8160',
-    bank: '--은행 0000-000-00000',
-    bankAccount: '0000-000-00000',
+    bank: '농헙은행 302-0660-0620-91',
+    bankAccount: '302-0660-0620-91',
   },
   {
     role: '어머님',

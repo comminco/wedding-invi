@@ -13,7 +13,7 @@ function Home() {
       <MainImage />
       <Intro />
       <Map />
-      <Parking />
+      {/* <Parking /> */}
       <Dining />
       <Money />
     </ViewContainer>
