@@ -159,7 +159,6 @@ const Wrap = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: var(--border-S);
 `
 
 const Title = styled.div`

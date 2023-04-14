@@ -33,7 +33,6 @@ const Wrap = styled.section`
 const MapImg = styled.img`
   width: 100%;
 
-  max-width: 400px;
   margin-bottom: 2rem;
   border-radius: 5px;
 `

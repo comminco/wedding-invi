@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import mapImg from '@/assets/images/map.png'
+import mapImgNaver from '@/assets/images/map_naver.png'
+
 import naverMapIcon from '@/assets/images/naver_map_icon.png'
 import kakaoMapIcon from '@/assets/images/kakao_map_icon.png'
 
@@ -17,7 +19,7 @@ export function Map() {
           width: '100%',
         }}
       >
-        <MapImg src={mapImg} alt="" />
+        <MapImg src={mapImgNaver} alt="" />
       </div>
       <div
         className="f-b-c"
@@ -83,7 +85,6 @@ const Traffic = styled.div`
 
 const MapImg = styled.img`
   width: 100%;
-  max-width: 400px;
   border-radius: 5px;
 `
 

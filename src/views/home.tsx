@@ -4,10 +4,9 @@ import { Intro } from '@/modules/home/intro'
 import { Map } from '@/modules/home/map'
 import { Parking } from '@/modules/home/parking'
 import { Dining } from '@/modules/home/dining'
-import { Order } from '@/modules/home/order'
-import { Star } from '@/modules/common/star'
 import { Money } from '@/modules/home/money'
 import { Dangbu } from '@/modules/home/dangbu'
+import { Gallery } from '@/modules/home/gallery'
 
 function Home() {
   return (
@@ -19,6 +18,7 @@ function Home() {
       <Dining />
       <Dangbu />
       <Money />
+      <Gallery />
     </ViewContainer>
   )
 }
