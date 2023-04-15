@@ -20,7 +20,7 @@ export function Intro() {
       <Star />
       <p>2023년 6월 17일</p>
       <p>토요일 오후 1시</p>
-      <p>용산가족공원 야외예식장</p>
+      <p>용산 가족 공원 야외예식장</p>
     </Wrap>
   )
 }
@@ -29,9 +29,13 @@ const Wrap = styled.section`
   padding: 3rem 0;
   display: flex;
   flex-direction: column;
+  margin-top: 500px;
 
   justify-content: center;
   align-items: center;
+`
 
-  border-bottom: var(--border-S);
+const Sticky = styled.div`
+  position: sticky;
+  top: 4px;
 `

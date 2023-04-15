@@ -46,7 +46,11 @@ export function Map() {
 
       <Traffic className="title">주차안내</Traffic>
       <Traffic>국립중앙박물관 지하주차장에 주차 하신 후</Traffic>
-      <Traffic>이정표 따라 예식장으로 오시면 됩니다(도보6분)</Traffic>
+      <Traffic>
+        이정표 따라 예식장으로 오시면 됩니다.
+        <br />
+        (도보6분)
+      </Traffic>
       <Traffic>※ 유료 2시간 2000원</Traffic>
       <br />
       <Traffic className="title">대중교통</Traffic>
@@ -69,6 +73,8 @@ const Wrap = styled.section`
 
   justify-content: center;
   align-items: center;
+
+  border-top: var(--border-S);
 `
 
 const Traffic = styled.div`

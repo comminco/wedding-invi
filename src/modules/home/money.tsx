@@ -163,7 +163,7 @@ const Wrap = styled.section`
 
 const Title = styled.div`
   font-size: 1.7rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 5rem;
 `
 
 const AccountBtn = styled.button`

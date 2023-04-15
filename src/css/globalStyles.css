@@ -13,7 +13,7 @@ body,
 #_bibimbap {
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 html {
@@ -61,12 +61,15 @@ button {
 body {
   word-wrap: break-word;
   color: hsla(0, 0%, 0%, 0.9);
-  background-color: rgba(226, 202, 136, 0.1);
+
+  background-color: rgb(249, 244, 229);
+}
+section {
+  background-color: rgb(249, 244, 229);
 }
 
 #_bibimbap {
   opacity: 1;
-  overflow-x: hidden;
 }
 
 :root {

@@ -7,12 +7,14 @@ import { Dining } from '@/modules/home/dining'
 import { Money } from '@/modules/home/money'
 import { Dangbu } from '@/modules/home/dangbu'
 import { Gallery } from '@/modules/home/gallery'
+import { Info } from '@/modules/home/info'
 
 function Home() {
   return (
     <ViewContainer>
       <MainImage />
       <Intro />
+      <Info />
       <Map />
       {/* <Parking /> */}
       <Dining />
