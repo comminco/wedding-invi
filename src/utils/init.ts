@@ -25,7 +25,7 @@ const opening = () => {
 
 const easterEgg = () => {
   console.log(
-    '%c by commin - https://commin.co',
+    '%c 장가간다~~~~~~',
     'color: #4A6F84; font-size: 12px; font-weight:bold; a { color: #fff;}'
   )
 }

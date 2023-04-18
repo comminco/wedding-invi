@@ -29,6 +29,9 @@ const Sticky = styled.div`
   position: sticky;
   top: -1px;
   text-align: center;
+  background-color: white;
+  line-height: 1.9;
 
   font-size: 12px;
+  border-bottom: var(--border-S);
 `

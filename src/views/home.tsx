@@ -8,6 +8,7 @@ import { Money } from '@/modules/home/money'
 import { Dangbu } from '@/modules/home/dangbu'
 import { Gallery } from '@/modules/home/gallery'
 import { Info } from '@/modules/home/info'
+import { Modal } from '@/modules/home/modal'
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
       <Dangbu />
       <Money />
       <Gallery />
+      <Modal />
     </ViewContainer>
   )
 }

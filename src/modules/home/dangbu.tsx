@@ -25,7 +25,6 @@ const Wrap = styled.section`
 
   justify-content: center;
   align-items: center;
-  margin-top: -5rem;
 `
 
 const Text = styled.div`

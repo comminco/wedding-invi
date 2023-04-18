@@ -17,16 +17,16 @@ export function Money() {
 
 const Toggle = ({ datas, title, type }: any[]) => {
   const [isActive, setIsActive] = useState(false)
-  useEffect(() => {
-    if (isActive) {
-      setTimeout(() => {
-        window.scrollTo({
-          top: document.body.scrollHeight + 400,
-          behavior: 'smooth',
-        })
-      }, 300)
-    }
-  }, [isActive])
+  // useEffect(() => {
+  //   if (isActive) {
+  //     setTimeout(() => {
+  //       window.scrollTo({
+  //         top: document.body.scrollHeight,
+  //         behavior: 'smooth',
+  //       })
+  //     }, 300)
+  //   }
+  // }, [isActive])
 
   return (
     <div style={{ margin: '0.5rem 0rem' }}>
@@ -148,7 +148,7 @@ const CopyText = styled.p`
   font-size: 0.6rem;
   position: absolute;
   top: -19px;
-  left: 10px;
+  left: 1.2rem;
   opacity: 0;
 `
 

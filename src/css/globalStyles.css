@@ -62,10 +62,10 @@ body {
   word-wrap: break-word;
   color: hsla(0, 0%, 0%, 0.9);
 
-  background-color: rgb(249, 244, 229);
+  background-color: var(--bg-color);
 }
 section {
-  background-color: rgb(249, 244, 229);
+  background-color: var(--bg-color);
 }
 
 #_bibimbap {
@@ -73,6 +73,7 @@ section {
 }
 
 :root {
+  --bg-color: white;
   --key-color-rgb: 74, 111, 132;
 
   --key-color: rgba(var(--key-color-rgb));
