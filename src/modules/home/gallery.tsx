@@ -15,7 +15,7 @@ import wd10 from '@/assets/images/wd10.jpg'
 const images = [wd1, wd2, wd3, wd4, wd5, wd6, wd7, wd8, wd9, wd10]
 export function Gallery() {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 200,
     slidesToShow: 1,

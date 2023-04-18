@@ -51,16 +51,18 @@ export function Map() {
         <br />
         (도보6분)
       </Traffic>
-      <Traffic>※ 유료 2시간 2000원</Traffic>
+      <Traffic style={{ fontSize: '0.9rem' }}>※ 유료 2시간 2000원</Traffic>
       <br />
       <Traffic className="title">대중교통</Traffic>
       <Traffic style={{ whiteSpace: 'pre' }}>
-        이촌역 4호선/경의중앙선 2번 출구 도보10분
+        <span>◦</span> 이촌역 4호선/경의중앙선 2번 출구 도보10분
       </Traffic>
-      <Traffic>서빙고역 경의중앙 1번 출구 도보10분</Traffic>
       <Traffic>
-        버스 400번, 502번 국립중앙박물관 용산가족공원 정류장 하차 도보 약 7분
-        소요
+        <span>◦</span> 서빙고역 경의중앙 1번 출구 도보10분
+      </Traffic>
+      <Traffic>
+        <span>◦</span> 버스 400번, 502번 국립중앙박물관 용산가족공원 정류장 하차
+        도보 약 7분 소요
       </Traffic>
     </Wrap>
   )
@@ -74,18 +76,24 @@ const Wrap = styled.section`
   justify-content: center;
   align-items: center;
 
-  border-top: var(--border-S);
+  border-bottom: var(--border-S);
 `
 
 const Traffic = styled.div`
   width: 100%;
   max-width: 400px;
-  padding-left: 7px;
   min-height: 2rem;
 
   &.title {
     padding-left: 0px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  span {
+    font-size: 0.5rem;
+    line-height: 3;
+    vertical-align: middle;
   }
 `
 

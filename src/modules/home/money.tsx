@@ -6,8 +6,8 @@ import { useState, useEffect, useRef } from 'react'
 export function Money() {
   return (
     <Wrap>
-      <Star />
       <Title>마음 전하실 곳</Title>
+      <Star />
       <Toggle type={'groom'} datas={groomDatas} title={'신랑측 계좌번호'} />
       <Toggle type={'bride'} datas={brideDatas} title={'신부측 계좌번호'} />
       <br />
@@ -54,9 +54,7 @@ const Toggle = ({ datas, title, type }: any[]) => {
               <div className="f-b-c">
                 <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
                 <div style={{ position: 'relative' }}>
-                  <CopyText id={`copyText-${idx}-${type}`}>
-                    복사 되었습니다.
-                  </CopyText>
+                  <CopyText id={`copyText-${idx}-${type}`}>복사 완료!</CopyText>
                   <CopyButton
                     onClick={() =>
                       handleCopyClipBoard(data.bankAccount, idx, type)
@@ -154,16 +152,16 @@ const CopyText = styled.p`
 
 const Wrap = styled.section`
   padding: 3rem 1.5rem;
-  padding-top: 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top: var(--border-S);
 `
 
 const Title = styled.div`
   font-size: 1.7rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 `
 
 const AccountBtn = styled.button`
@@ -185,9 +183,8 @@ const CopyButton = styled.button`
   font-weight: 400;
   font-size: 0.8rem;
   background-color: rgb(191, 225, 192);
-  width: 4rem;
+  padding: 0.5rem 1rem;
   margin-left: 20px;
-  height: 32px;
   border: none;
   border-radius: 5px;
 `

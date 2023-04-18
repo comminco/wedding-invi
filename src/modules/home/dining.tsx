@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import diningMap from '@/assets/images/dining_map.jpg'
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import gifts from '@/assets/images/gifts.png'
 
 export function Dining() {
   const [onAddr, setOnAddr] = useState(false)
@@ -16,9 +17,19 @@ export function Dining() {
       {isPresent ? (
         <>
           <Title>답례품 안내</Title>
-          <Text>먼길 귀한시간 내주셔서 감사합니다. </Text>
-          <Text>감사의 의미로 답례품을 집으로</Text>
-          <Text>배송해드리려 합니다.</Text>
+          <img
+            style={{
+              width: '40%',
+              marginBottom: 10,
+            }}
+            src={gifts}
+            alt=""
+          />
+          <Text>친환경적인 결혼식 장소 특성상 식사를</Text>
+          <Text>대접해 드리지 못한 점 양해 부탁드립니다.</Text>
+
+          <Text>대신 주소를 입력해 주시면 감사의 마음을 담아</Text>
+          <Text>집으로 답례품을 배송해드릴게요!</Text>
 
           {addrComplete ? (
             <SuccessButton>주소 입력 완료 ✔️</SuccessButton>
@@ -28,7 +39,7 @@ export function Dining() {
                 <AddrInput setAddrComplete={setAddrComplete} />
               ) : (
                 <AddrButton onClick={() => setOnAddr(true)}>
-                  주소 입력하기
+                  답례품 받을 주소 입력하기
                 </AddrButton>
               )}
             </>
@@ -207,13 +218,15 @@ const AddrInput = ({ setAddrComplete }) => {
 
 const AddrWrap = styled.div`
   position: relative;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   input {
     height: 25px;
     margin: 3px;
     width: calc(50% - 1.5rem);
     padding-left: 5px;
+    border-radius: 5px;
+    border: var(--border-S);
   }
 `
 
