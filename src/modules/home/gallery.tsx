@@ -185,7 +185,7 @@ const RightArrow = () => {
 
 const Wrap = styled.section`
   padding: 0;
-
+  padding-bottom: 2.7rem;
   border-bottom: var(--border-S);
 `
 
