@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { Star } from '../common/star'
+import { BlueFlower, RedFlower } from '../common/star'
 
 export function Dangbu() {
   return (
     <Wrap>
-      <Star />
+      <BlueFlower />
       <Text>
         6월의 야외 예식이라 많이 더울 수 있습니다. 빛을 가릴 수 있는 양산과
         시원한 음료가 제공될 예정이나, 미리 양해의 말씀을 드립니다.

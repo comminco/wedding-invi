@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import diningMap from '@/assets/images/dining_map.jpg'
 import { useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import gifts from '@/assets/images/gifts.png'
 
 export function Dining() {
@@ -25,12 +25,12 @@ export function Dining() {
             src={gifts}
             alt=""
           />
-          <Text>친환경적인 결혼식 장소 특성상 식사를</Text>
-          <Text>대접해 드리지 못한 점 양해 부탁드립니다.</Text>
-
+          <Text>자연 속에서 가까운 친지 분들과 </Text>
+          <Text>여유로운 결혼식을 꾸리다보니,</Text>
+          <Text>식사를 제공해드리기가 어렵습니다.</Text>
+          <Text>양해를 부탁드립니다.</Text>
           <Text>대신 주소를 입력해 주시면 감사의 마음을 담아</Text>
-          <Text>집으로 답례품을 배송해드릴게요!</Text>
-
+          <Text>답례품을 배송해드리고자 합니다 🤍</Text>
           {addrComplete ? (
             <SuccessButton>주소 입력 완료 ✔️</SuccessButton>
           ) : (
@@ -38,7 +38,10 @@ export function Dining() {
               {onAddr ? (
                 <AddrInput setAddrComplete={setAddrComplete} />
               ) : (
-                <AddrButton onClick={() => setOnAddr(true)}>
+                <AddrButton
+                  style={{ marginTop: 20 }}
+                  onClick={() => setOnAddr(true)}
+                >
                   답례품 받을 주소 입력하기
                 </AddrButton>
               )}
@@ -49,7 +52,7 @@ export function Dining() {
         <>
           <Title>식사 안내</Title>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            <p>국립중앙박물관 1층</p>
+            <p>국립중앙박물관 1층 내부</p>
             <p>경천사탑 두레</p>
           </div>
 
@@ -60,6 +63,16 @@ export function Dining() {
           >
             <MapImg src={diningMap} alt="" />
           </div>
+
+          <a
+            style={{}}
+            href="/src/assets/images/dining_map.jpg"
+            target={'_blank'}
+          >
+            지도 크게보기
+          </a>
+          <Text>식사 1부 : 11:30 ~ 13:00</Text>
+          <Text>식사 2부 : 14:00 ~ 15:30</Text>
         </>
       )}
     </Wrap>
@@ -232,6 +245,7 @@ const AddrWrap = styled.div`
 
 const Wrap = styled.section`
   padding: 3rem 1.5rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
 
@@ -242,7 +256,6 @@ const Wrap = styled.section`
 const MapImg = styled.img`
   width: 100%;
 
-  margin-bottom: 2rem;
   border-radius: 5px;
 `
 
@@ -257,7 +270,7 @@ const AddrButton = styled.button`
   margin-top: 10px;
   background-color: #e8eaeb;
   padding: 0.3rem 1rem;
-  font-size: var(--text-M);
+  font-size: 0.8rem;
   border-radius: 10px;
   border: none;
   box-shadow: 1px 1px 1px grey;

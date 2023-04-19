@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
-import { Star } from '../common/star'
+import { BlueFlower, RedFlower, GreenClova } from '../common/star'
 import { useState, useEffect, useRef } from 'react'
 
 export function Money() {
   return (
     <Wrap>
       <Title>마음 전하실 곳</Title>
-      <Star />
+      <GreenClova />
       <Toggle type={'groom'} datas={groomDatas} title={'신랑측 계좌번호'} />
       <Toggle type={'bride'} datas={brideDatas} title={'신부측 계좌번호'} />
       <br />
@@ -88,8 +88,8 @@ const brideDatas = [
   {
     role: '신부',
     name: '빈다은',
-    bank: '신한은행 110-451-165439',
-    bankAccount: '110-451-165439',
+    bank: '토스뱅크 1000-1021-0969',
+    bankAccount: '1000-1021-0969',
   },
   {
     role: '아버님',
@@ -160,7 +160,7 @@ const Wrap = styled.section`
 `
 
 const Title = styled.div`
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 `
 
