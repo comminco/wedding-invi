@@ -21,15 +21,18 @@ export function Dining() {
             style={{
               width: '40%',
               marginBottom: 10,
+              objectFit: 'contain',
             }}
             src={gifts}
             alt=""
           />
-          <Text>자연 속에서 가까운 친지 분들과 </Text>
-          <Text>여유로운 결혼식을 꾸리다보니,</Text>
-          <Text>식사를 제공해드리기가 어렵습니다.</Text>
-          <Text>양해를 부탁드립니다.</Text>
-          <Text>대신 주소를 입력해 주시면 감사의 마음을 담아</Text>
+          <Text>자연 속에서 야외 결혼식을 꾸리다보니,</Text>
+
+          <Text>장소의 특성상 식사를 제공해</Text>
+          <Text>드리기가 어렵습니다.</Text>
+          <Text>깊은 양해를 부탁드립니다.</Text>
+          <br />
+          <Text>감사의 마음을 담아</Text>
           <Text>답례품을 배송해드리고자 합니다 🤍</Text>
           {addrComplete ? (
             <SuccessButton>주소 입력 완료 ✔️</SuccessButton>

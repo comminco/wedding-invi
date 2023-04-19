@@ -33,5 +33,5 @@ const Sticky = styled.div`
   line-height: 1.9;
 
   font-size: 12px;
-  border-bottom: var(--border-S);
+  border-bottom: 1px solid #008000;
 `

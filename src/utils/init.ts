@@ -20,7 +20,7 @@ const opening = () => {
     setTimeout(() => {
       introEl.remove()
     }, 1200)
-  }, 2300)
+  }, 2500)
 }
 
 const easterEgg = () => {

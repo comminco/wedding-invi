@@ -38,7 +38,7 @@
         transform: rotate(-45deg);
       }
       .heart-loader__heartPath {
-        stroke: #db3434;
+        stroke: #008000;
         fill: transparent;
         stroke-dasharray: 308.522, 308.522;
         stroke-dashoffset: 308.522;
@@ -55,15 +55,21 @@
         }
         87% {
           stroke-dashoffset: 0;
-          fill: #db3434;
+          fill: #008000;
         }
         100% {
           stroke-dashoffset: 0;
-          fill: #db3434;
+          fill: #008000;
         }
       }
 
       #intro {
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 128, 0, 0) 50%,
+          rgba(0, 128, 0, 0.1) 80%,
+          rgba(0, 128, 0, 0.2) 100%
+        );
         width: 100vw;
         height: 100vh;
         position: fixed;
