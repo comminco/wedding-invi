@@ -1,6 +1,11 @@
 @font-face {
   font-family: 'AppleMyungjo';
-  src: url('/AppleMyungjo.ttf') format('truetype');
+  src: url('../assets/fonts/AppleMyungjo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'QuattroSans';
+  src: url('../assets/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
 }
 
 html,
