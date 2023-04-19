@@ -32,7 +32,7 @@ export function Dining() {
           <Text>드리기가 어렵습니다.</Text>
           <Text>깊은 양해를 부탁드립니다.</Text>
           <br />
-          <Text>감사의 마음을 담아</Text>
+          <Text>먼길 오신 분들께는 감사의 마음을 담아</Text>
           <Text>답례품을 배송해드리고자 합니다 🤍</Text>
           {addrComplete ? (
             <SuccessButton>주소 입력 완료 ✔️</SuccessButton>
@@ -56,7 +56,7 @@ export function Dining() {
           <Title>식사 안내</Title>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
             <p>국립중앙박물관 1층 내부</p>
-            <p>경천사탑 두레</p>
+            <p>'경천사탑 두레'</p>
           </div>
 
           <div
@@ -67,11 +67,7 @@ export function Dining() {
             <MapImg src={diningMap} alt="" />
           </div>
 
-          <a
-            style={{}}
-            href="/src/assets/images/dining_map.jpg"
-            target={'_blank'}
-          >
+          <a style={{}} href="/dining_map.jpg" target={'_blank'}>
             지도 크게보기
           </a>
           <Text>식사 1부 : 11:30 ~ 13:00</Text>
@@ -191,7 +187,13 @@ const AddrInput = ({ setAddrComplete }) => {
         id="sample2_postcode"
         placeholder="우편번호"
       />
-      <AddrButton id="searchBtn" onClick={handleFindAddr}>
+      <AddrButton
+        style={{
+          padding: '0.2rem 1rem',
+        }}
+        id="searchBtn"
+        onClick={handleFindAddr}
+      >
         주소 찾기
       </AddrButton>
 
@@ -272,7 +274,7 @@ const AddrButton = styled.button`
   cursor: pointer;
   margin-top: 10px;
   background-color: #e8eaeb;
-  padding: 0.3rem 1rem;
+  padding: 0.4rem 1rem;
   font-size: 0.8rem;
   border-radius: 10px;
   border: none;
