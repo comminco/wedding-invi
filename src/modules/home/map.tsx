@@ -9,8 +9,8 @@ import kakaoMapIcon from '@/assets/images/kakao_map_icon.png'
 export function Map() {
   return (
     <Wrap>
-      <Title>예식장 안내</Title>
-      <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+      <Title>오시는 길</Title>
+      <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
         <p>서울 용산구 용산동6가 93-6</p>
         <p>용산가족공원 야외예식장</p>
       </div>

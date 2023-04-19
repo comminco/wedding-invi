@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 import { BlueFlower, RedFlower, GreenClova } from '../common/star'
 import { useState, useEffect, useRef } from 'react'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 export function Money() {
   return (
@@ -17,16 +18,6 @@ export function Money() {
 
 const Toggle = ({ datas, title, type }: any[]) => {
   const [isActive, setIsActive] = useState(false)
-  // useEffect(() => {
-  //   if (isActive) {
-  //     setTimeout(() => {
-  //       window.scrollTo({
-  //         top: document.body.scrollHeight,
-  //         behavior: 'smooth',
-  //       })
-  //     }, 300)
-  //   }
-  // }, [isActive])
 
   return (
     <div style={{ margin: '0.5rem 0rem' }}>
@@ -55,13 +46,14 @@ const Toggle = ({ datas, title, type }: any[]) => {
                 <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
                 <div style={{ position: 'relative' }}>
                   <CopyText id={`copyText-${idx}-${type}`}>복사 완료!</CopyText>
-                  <CopyButton
-                    onClick={() =>
-                      handleCopyClipBoard(data.bankAccount, idx, type)
-                    }
+                  <CopyToClipboard
+                    onCopy={() => {
+                      handleCopyClipBoard(idx, type)
+                    }}
+                    text={data.bankAccount}
                   >
-                    복사하기
-                  </CopyButton>
+                    <CopyButton>복사하기</CopyButton>
+                  </CopyToClipboard>
                 </div>
               </div>
             </div>
@@ -129,9 +121,8 @@ const groomDatas = [
   },
 ]
 
-const handleCopyClipBoard = async (text: string, idx: number, type: string) => {
+const handleCopyClipBoard = async (idx: number, type: string) => {
   try {
-    await navigator.clipboard.writeText(text)
     const copyTextEl = document.getElementById(`copyText-${idx}-${type}`)!
     copyTextEl.style.animation = 'appearNdisappear linear 0.7s 1 forwards'
     setTimeout(() => {
