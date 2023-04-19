@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import '@/css/globalStyles.css'
+// import '@/css/heart.css'
 import Home from '@/views/home'
 import { init } from '@/utils/init'
 import { timeZone as timeZoneRecoil } from '@/atoms/user'

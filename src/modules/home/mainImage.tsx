@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import bubu from '@/assets/images/bubu.jpg'
 export function MainImage() {
   return (
-    <Wrap>
+    <Wrap id="mainImageWrap">
       <Bubu src={bubu} />
     </Wrap>
   )

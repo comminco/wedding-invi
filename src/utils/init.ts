@@ -2,8 +2,8 @@
  * once execute
  */
 export function init() {
+  opening()
   easterEgg()
-  // opening()
 }
 
 /**
@@ -20,7 +20,7 @@ const opening = () => {
     setTimeout(() => {
       introEl.remove()
     }, 1200)
-  }, 2200)
+  }, 2300)
 }
 
 const easterEgg = () => {

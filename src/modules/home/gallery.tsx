@@ -86,15 +86,15 @@ const LeftArrow = () => {
     <svg width="24" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#Prev_svg__a)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M17.113 1 19 2.95 9.035 12 19 21.05 17.113 23 5 12 17.113 1Z"
           fill="#fff"
         ></path>
         <path
           d="m17.292.826-.168-.174-.18.163-12.112 11-.204.185.204.185 12.113 11 .179.163.168-.174 1.888-1.95.18-.186-.192-.173L9.407 12l9.761-8.865.191-.173-.18-.186-1.887-1.95Z"
           stroke="#000"
-          stroke-width="0.5"
+          strokeWidth="0.5"
         ></path>
       </g>
       <defs>
@@ -105,9 +105,9 @@ const LeftArrow = () => {
           width="23.462"
           height="31.392"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
           <feColorMatrix
             in="SourceAlpha"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -137,15 +137,15 @@ const RightArrow = () => {
     <svg width="24" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#Next_svg__a)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M6.887 23 5 21.05 14.965 12 5 2.95 6.887 1 19 12 6.887 23Z"
           fill="#fff"
         ></path>
         <path
           d="m6.708 23.174.168.174.18-.163 12.112-11 .204-.185-.204-.185-12.112-11-.18-.163-.168.174-1.888 1.95-.18.186.192.173L14.593 12l-9.761 8.865-.191.173.18.186 1.887 1.95Z"
           stroke="#000"
-          stroke-width="0.5"
+          strokeWidth="0.5"
         ></path>
       </g>
       <defs>
@@ -156,9 +156,9 @@ const RightArrow = () => {
           width="23.462"
           height="31.392"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
           <feColorMatrix
             in="SourceAlpha"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
