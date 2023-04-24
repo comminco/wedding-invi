@@ -16,7 +16,7 @@ export function Money() {
   )
 }
 
-const Toggle = ({ datas, title, type }: any[]) => {
+const Toggle = ({ datas, title, type }) => {
   const [isActive, setIsActive] = useState(false)
 
   return (
@@ -28,7 +28,7 @@ const Toggle = ({ datas, title, type }: any[]) => {
       <div
         className="expandable"
         id={isActive ? 'active' : ''}
-        style={{ width: '100%', lineHeight: 2, fontWeight: 400 }}
+        style={{ width: '100%', lineHeight: 1.8 }}
       >
         {datas.map((data, idx) => {
           return (
