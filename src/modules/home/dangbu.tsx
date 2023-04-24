@@ -23,7 +23,7 @@ export function Dangbu() {
 }
 
 const Wrap = styled.section`
-  padding: 0rem 1.5rem;
+  padding: 0rem 2rem;
   padding-bottom: 2rem;
 
   display: flex;
