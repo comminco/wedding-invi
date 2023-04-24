@@ -31,6 +31,7 @@ export function Dining() {
           <Text>장소의 특성상 식사를 제공해</Text>
           <Text>드리기가 어렵습니다.</Text>
           <Text>깊은 양해를 부탁드립니다.</Text>
+          <LinkMap />
           <br />
           <Text>먼길 오신 분들께는 감사의 마음을 담아</Text>
           <Text>답례품을 배송해드리고자 합니다 🤍</Text>
@@ -41,12 +42,14 @@ export function Dining() {
               {onAddr ? (
                 <AddrInput setAddrComplete={setAddrComplete} />
               ) : (
-                <AddrButton
-                  style={{ marginTop: 20 }}
-                  onClick={() => setOnAddr(true)}
-                >
-                  답례품 받을 주소 입력하기
-                </AddrButton>
+                <>
+                  <AddrButton
+                    style={{ marginTop: 20 }}
+                    onClick={() => setOnAddr(true)}
+                  >
+                    답례품 받을 주소 입력하기
+                  </AddrButton>
+                </>
               )}
             </>
           )}
@@ -75,6 +78,34 @@ export function Dining() {
         </>
       )}
     </Wrap>
+  )
+}
+const LinkMap = () => {
+  const url =
+    'https://complete-addition-0fc.notion.site/8b545dbbddb64d898288a2d1edf90614'
+  return (
+    <div
+      style={{
+        textDecoration: 'underline',
+        cursor: 'pointer',
+        fontSize: '0.8rem',
+      }}
+      onClick={() => window.open(url, '_blank', 'noopener, noreferrer')}
+    >
+      <span style={{ display: 'inline', paddingRight: '3px' }}>
+        그럼 점심은 어떻게 하지
+      </span>
+
+      <span
+        style={{
+          position: 'absolute',
+          display: 'inline',
+          transform: 'rotate(45deg)',
+        }}
+      >
+        ?
+      </span>
+    </div>
   )
 }
 

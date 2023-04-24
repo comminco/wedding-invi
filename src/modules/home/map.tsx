@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 import mapImg from '@/assets/images/map.png'
-import mapImgNaver from '@/assets/images/map_naver.png'
-import { YellowClova } from '../common/star'
+import mapWImg from '@/assets/images/map_w.png'
+import diningMap from '@/assets/images/dining_map.jpg'
+import { useLocation } from 'react-router-dom'
 
 import naverMapIcon from '@/assets/images/naver_map_icon.png'
 import kakaoMapIcon from '@/assets/images/kakao_map_icon.png'
 
 export function Map() {
+  const location = useLocation()
+  const { pathname } = location
+
+  const isPresent = pathname.includes('w')
   return (
     <Wrap>
       <Title>오시는 길</Title>
@@ -20,7 +25,7 @@ export function Map() {
           width: '100%',
         }}
       >
-        <MapImg src={mapImg} alt="" />
+        <MapImg src={isPresent ? mapWImg : mapImg} alt="" />
       </div>
       <div
         className="f-b-c"
