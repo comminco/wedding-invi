@@ -43,7 +43,24 @@ const Toggle = ({ datas, title, type }) => {
             >
               <div>{`${data.name}`}</div>
               <div className="f-b-c">
-                <div dangerouslySetInnerHTML={{ __html: data.bank }}></div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: '0.9rem',
+                      marginRight: '5px',
+                    }}
+                  >
+                    {data.bank}
+                  </div>
+
+                  <div style={{ fontSize: '1rem' }}>{data.bankAccount}</div>
+                </div>
                 <div style={{ position: 'relative' }}>
                   <CopyText id={`copyText-${idx}-${type}`}>복사 완료!</CopyText>
                   <CopyToClipboard
@@ -80,19 +97,19 @@ const brideDatas = [
   {
     role: '신부',
     name: '빈다은',
-    bank: '토스뱅크 1000-1021-0969',
+    bank: '토스뱅크',
     bankAccount: '1000-1021-0969',
   },
   {
     role: '아버님',
     name: '빈수용',
-    bank: '카카오뱅크 3333-01-6458488',
+    bank: '카카오뱅크',
     bankAccount: '3333-01-6458488',
   },
   {
     role: '어머님',
     name: '최미경',
-    bank: '카카오뱅크 3333-05-1653524',
+    bank: '카카오뱅크',
     bankAccount: '3333-05-1653524',
   },
 ]
@@ -102,21 +119,21 @@ const groomDatas = [
     role: '신랑',
     name: '이경민',
     phone: '010-6406-8160',
-    bank: '신한은행 110-369-341954',
+    bank: '신한은행',
     bankAccount: '110-369-341954',
   },
   {
     role: '아버님',
     name: '이동진',
     phone: '010-2408-8160',
-    bank: '농협은행 302-0660-0620-91',
+    bank: '농협은행',
     bankAccount: '302-0660-0620-91',
   },
   {
     role: '어머님',
     name: '김경화',
     phone: '010-3156-8160',
-    bank: '하나은행 743-910005-70707',
+    bank: '하나은행',
     bankAccount: '743-910005-70707',
   },
 ]
@@ -175,7 +192,7 @@ const CopyButton = styled.button`
   font-size: 0.8rem;
   background-color: rgb(191, 225, 192);
   padding: 0.5rem 1rem;
-  margin-left: 20px;
+  margin-left: 10px;
   border: none;
   border-radius: 5px;
 `
