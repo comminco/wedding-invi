@@ -183,7 +183,7 @@ const AddrInput = ({ setAddrComplete }) => {
       alert('상세 주소를 입력해 주세요!')
       return
     }
-    const url = 'https://api.408.co.kr/wedding/'
+    const url = 'https://api.commin.co/wedding/'
     const datas = {
       name: document.getElementById('name').value,
       postCode: document.getElementById('sample2_postcode').value,
